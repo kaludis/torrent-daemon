@@ -26,8 +26,10 @@
 #include <memory>
 #include <utility>
 #include <cstdint>
+#include <vector>
 
-#define BOOST_ASIO_DYN_LINK
+#include <iostream>
+
 #include <libtorrent/session.hpp>
 
 #include "torrent.h"
@@ -44,11 +46,11 @@ public:
     ~Session();
     void start_listen() throw (TCException);
     void add_entity(const TorrentEntity& entity) throw (TCException);
+    void add_entries(const std::vector<TorrentEntity>& entries);
 
 private:
     std::pair<uint32_t, uint32_t> port_range_;    
     std::unique_ptr<session> session_ptr_;
-
 };
 
 }

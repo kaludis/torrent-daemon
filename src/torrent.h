@@ -26,7 +26,6 @@
 #include <string>
 #include <memory>
 
-#define BOOST_ASIO_DYN_LINK
 #include <libtorrent/session.hpp>
 
 #include "tcexception.h"

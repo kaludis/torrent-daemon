@@ -19,7 +19,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
  */
-
 #include "session.h"
 
 namespace tclient
@@ -55,6 +54,12 @@ void Session::add_entity(const TorrentEntity& entity) throw (TCException)
         throw TCException("Error occurred with addition new torrent:\n" +
                           ec.message());
     }
+}
+
+void Session::add_entries(const std::vector<TorrentEntity>& entries)
+{
+    // TODO
+    // Add all valid entries from vector to session
 }
 
 }
