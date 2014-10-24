@@ -43,7 +43,8 @@ public:
     typedef std::unique_ptr<Logger> LoggerPtr_t;
     typedef std::ofstream LogStream_t;
     typedef std::unique_ptr<LogStream_t> LogStreamPtr_t;
-    typedef std::unique_ptr<std::mutex> MutexPtr_t;
+    typedef std::mutex Mutex_t;
+    typedef std::unique_ptr<Mutex_t> MutexPtr_t;
     
     enum Severity {
         NONE = -1,        

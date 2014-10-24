@@ -40,7 +40,7 @@ Logger::Logger()
         : severity_(Severity::INFO),
           log_file_(std::string()),
           time_format_(TimeFormat::LOCAL),
-          stream_(nullptr),
+          stream_(new LogStream_t),
           mutex_(new std::mutex())
 {}
 
