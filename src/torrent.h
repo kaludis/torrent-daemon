@@ -47,7 +47,7 @@ public:
 private:
     std::string file_name_;
     std::string save_path_;
-    std::unique_ptr<add_torrent_params> tparams_ptr_;
+    std::shared_ptr<add_torrent_params> tparams_ptr_;
 };
 
 }
