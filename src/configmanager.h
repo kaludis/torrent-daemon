@@ -20,6 +20,11 @@
   THE SOFTWARE.
  */
 
+/*
+ * ConfigManager is a singleton with auto memory managing
+ * for control daemon configuration
+ */
+
 #ifndef CONFIGMANAGER_H_
 #define CONFIGMANAGER_H_
 

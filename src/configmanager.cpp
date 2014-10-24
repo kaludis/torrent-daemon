@@ -20,6 +20,7 @@
   THE SOFTWARE.
  */
 
+#include <iostream>
 #include <fstream>
 #include <cstdlib>
 #include <string>
@@ -33,7 +34,9 @@
 namespace tclient
 {
 
-ConfigManager::ConfigManager() throw (TCException)
+ConfigManager::ConfigManager()  throw (TCException)
+        : config_file_(std::string()),
+          config_map_(ConfigManager::config_map_t())
 {
     check_config_file();
     if (!load_config()) {
@@ -124,7 +127,6 @@ const ConfigManager::config_map_t& ConfigManager::config_map() const
 }
 
 ConfigManager::config_manager_t ConfigManager::instance_(nullptr);
-//ConfigManager* ConfigManager::instance_ = nullptr;
 
 }
 
