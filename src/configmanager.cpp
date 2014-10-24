@@ -20,7 +20,6 @@
   THE SOFTWARE.
  */
 
-#include <iostream>
 #include <fstream>
 #include <cstdlib>
 #include <string>
@@ -101,6 +100,8 @@ bool ConfigManager::load_config()
 
         config_map_.insert(config_pair_t(key, value));
     }
+
+    in.close();
 
     if (!config_map_.size()) {
         return false;
