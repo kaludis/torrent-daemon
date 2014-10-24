@@ -28,8 +28,6 @@
 #include <cstdint>
 #include <vector>
 
-#include <iostream>
-
 #include <libtorrent/session.hpp>
 
 #include "torrent.h"
@@ -42,11 +40,15 @@ using namespace libtorrent;
 
 class Session {
 public:
+
+    typedef std::shared_ptr<TorrentEntity> TorrentEntity_ptr;
+    typedef std::vector<TorrentEntity_ptr> Tasks_t;
+
     Session(uint32_t start_port, uint32_t end_port);
     ~Session();
     void start_listen() throw (TCException);
     void add_entity(const TorrentEntity& entity) throw (TCException);
-    void add_entries(const std::vector<TorrentEntity>& entries);
+    void add_entries(const Tasks_t& entries);
 
 private:
     std::pair<uint32_t, uint32_t> port_range_;    
