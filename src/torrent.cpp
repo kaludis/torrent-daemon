@@ -29,7 +29,7 @@ TorrentEntity::TorrentEntity(const std::string& file_name,
                              const std::string& save_path) throw (TCException)
         : file_name_(file_name),
           save_path_(save_path),
-          tparams_ptr_(new add_torrent_params)
+          tparams_ptr_(new add_torrent_params())
 {
     tparams_ptr_->save_path = save_path_;
     error_code ec;
